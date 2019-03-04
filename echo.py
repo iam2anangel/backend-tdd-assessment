@@ -12,6 +12,7 @@ import argparse
 def create_parser():
     parser = argparse.ArgumentParser(
         description='Perform transformation on input text')
+    # do I add an arguement for help?
     parser.add_argument(
         '-u', '--upper', help='convert text to uppercase', action='store_true')
     parser.add_argument(
@@ -27,7 +28,6 @@ def main(args):
 
     if not args:
         return open('./USAGE', 'r').read()
-
         namespace = parser.parse_args(args)
     text = namespace.text
     if namespace.upper:
