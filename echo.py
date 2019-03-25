@@ -24,11 +24,11 @@ def create_parser():
 
 
 def main(args):
-    parser = create_parser
+    parser = create_parser()
 
     if not args:
         return open('./USAGE', 'r').read()
-        namespace = parser.parse_args(args)
+    namespace = parser.parse_args(args)
     text = namespace.text
     if namespace.upper:
         text = text.upper()
@@ -40,5 +40,5 @@ def main(args):
 
 
 if __name__ == '__main__':
-    result = main(sys.args[1:])
+    result = main(sys.argv[1:])
     print result
